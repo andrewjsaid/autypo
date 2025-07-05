@@ -169,7 +169,7 @@ Autypo is intentionally designed for **short-text and autocomplete scenarios** �
 
 - Documents are limited to **64 tokens max** (e.g., product names, commands, short descriptions)
 - In-memory indexing is fast and efficient, but may not suit massive corpora or multi-megabyte documents
-- Autypo is not intended for long-form text search — for that, consider Lucene or ElasticSearch
+- Autypo is not intended for long-form text search — for that, consider other tools.
 
 > This tradeoff is deliberate: it keeps Autypo incredibly fast, predictable, and ideal for UX-critical search.
 
