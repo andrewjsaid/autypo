@@ -1,0 +1,20 @@
+@ApiSearchProducts_HostAddress = http://localhost:5134
+
+GET {{ApiSearchProducts_HostAddress}}/products/search?query=micro
+Accept: application/json
+
+###
+
+GET {{ApiSearchProducts_HostAddress}}/products/search?query=fngerprint%20usb%20recogn
+Accept: application/json
+
+###
+
+GET {{ApiSearchProducts_HostAddress}}/products/search?query=A1080
+Accept: application/json
+
+
+###
+
+GET {{ApiSearchProducts_HostAddress}}/products/search?query=1080
+Accept: application/json

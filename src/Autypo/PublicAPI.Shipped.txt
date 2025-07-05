@@ -1,0 +1,352 @@
+﻿#nullable enable
+abstract Autypo.AutypoFactory.InitializeIfBackground(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task!
+abstract Autypo.AutypoFactory.InitializeIfEager(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task!
+Autypo.AutypoFactory
+Autypo.AutypoFactory.AutypoFactory() -> void
+Autypo.AutypoFactory<T>
+Autypo.AutypoFactory<T>.AutypoFactory() -> void
+Autypo.AutypoFactory<T>.Configure(System.Action<Autypo.Configuration.AutypoConfigurationBuilder<T>!>! configure) -> void
+Autypo.MatchScope
+Autypo.MatchScope.Full = 0 -> Autypo.MatchScope
+Autypo.MatchScope.Prefix = 1 -> Autypo.MatchScope
+Autypo.AutypoQueryContext
+Autypo.AutypoQueryContext.DocumentCount.get -> int
+Autypo.AutypoQueryContext.DocumentType.get -> System.Type!
+Autypo.AutypoQueryContext.ExtractedQueryTokens.get -> System.Collections.Generic.IReadOnlyList<Autypo.Tokenization.AutypoToken!>!
+Autypo.AutypoQueryContext.GetDocuments<T>() -> System.Collections.Generic.IEnumerable<Autypo.ScoredDocument<T>>!
+Autypo.AutypoQueryContext.IndexedDocumentCount.get -> int
+Autypo.AutypoQueryContext.IndexedDocumentKeysCount.get -> int
+Autypo.AutypoQueryContext.IndexName.get -> string?
+Autypo.AutypoQueryContext.Metadata.get -> System.Collections.Generic.IReadOnlyDictionary<string!, object!>!
+Autypo.AutypoQueryContext.Query.get -> string!
+Autypo.AutypoQueryContext.QueryTokenizedLength.get -> int
+Autypo.AutypoQueryContext.RawQuery.get -> string!
+Autypo.AutypoQueryContext.TransformedQueryTokens.get -> System.Collections.Generic.IReadOnlyList<Autypo.Tokenization.AutypoToken!>!
+Autypo.AutypoRefreshToken
+Autypo.AutypoRefreshToken.AutypoRefreshToken() -> void
+Autypo.AutypoRefreshToken.RefreshAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+Autypo.AutypoSearchContext
+Autypo.AutypoSearchContext.AutypoSearchContext() -> void
+Autypo.AutypoSearchContext.Metadata.get -> System.Collections.Generic.IReadOnlyDictionary<string!, object!>?
+Autypo.AutypoSearchContext.Metadata.set -> void
+Autypo.AutypoSearchResult<T>
+Autypo.AutypoSearchResult<T>.AutypoSearchResult() -> void
+Autypo.AutypoSearchResult<T>.AutypoSearchResult(T value, Autypo.AutypoTags tags) -> void
+Autypo.AutypoSearchResult<T>.Tags.get -> Autypo.AutypoTags
+Autypo.AutypoSearchResult<T>.Value.get -> T
+Autypo.AutypoTag
+Autypo.AutypoTag.AutypoTag() -> void
+Autypo.AutypoTag.AutypoTag(string! key, object! value) -> void
+Autypo.AutypoTag.Key.get -> string!
+Autypo.AutypoTag.Value.get -> object!
+Autypo.AutypoTags
+Autypo.AutypoTags.AutypoTags() -> void
+Autypo.AutypoTags.Clear() -> void
+Autypo.AutypoTags.Clone() -> Autypo.AutypoTags
+Autypo.AutypoTags.CopyFrom(Autypo.AutypoTags other) -> void
+Autypo.AutypoTags.Remove(string! key) -> bool
+Autypo.AutypoTags.Set(string! key, object! value) -> void
+Autypo.AutypoTags.TryGetValue(string! key, out object! result) -> bool
+Autypo.AutypoTags.TryGetValue<T>(string! key, out T result) -> bool
+Autypo.AutypoTags.Values.get -> System.ReadOnlySpan<Autypo.AutypoTag>
+Autypo.AutypoUninitializedException
+Autypo.AutypoUninitializedException.AutypoUninitializedException() -> void
+Autypo.AutypoUninitializedException.AutypoUninitializedException(string! message) -> void
+Autypo.AutypoUninitializedException.AutypoUninitializedException(string! message, System.Exception! inner) -> void
+Autypo.CandidateFilter<T>
+Autypo.CandidateScorer<T>
+Autypo.CandidateTagger<T>
+Autypo.Configuration.AutypoConfigurationBuilder<T>
+Autypo.Configuration.AutypoConfigurationBuilder<T>.UseRefreshToken(Autypo.AutypoRefreshToken! token) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithDataSourceContext(object! dataSourceContext) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithDataSourceFactory(System.Func<object?, Autypo.IAutypoDataSource<T>!>! dataSourceFactory) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithDocumentScorer(Autypo.DocumentScorer<T>! documentScorer) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithEmptyQueryHandling(Autypo.EmptyQueryHandler<T>! emptyQueryHandler) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithEnrichedMetadata(Autypo.Configuration.AutypoMetadataEnrichment enrichment) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithIndex(System.Func<T, string?>! keySelector, System.Action<Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!>! configureIndex) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithInitializationMode(Autypo.InitializationMode initializationMode, Autypo.UninitializedBehavior onUninitialized) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithMaxResults(Autypo.MaxResultsSelector! selector) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilder<T>.WithShouldIndex(System.Func<T, bool>! shouldIndex) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+Autypo.Configuration.AutypoConfigurationBuilderExtensions
+Autypo.Configuration.AutypoConfigurationException
+Autypo.Configuration.AutypoConfigurationException.AutypoConfigurationException() -> void
+Autypo.Configuration.AutypoConfigurationException.AutypoConfigurationException(string! message) -> void
+Autypo.Configuration.AutypoConfigurationException.AutypoConfigurationException(string! message, System.Exception! inner) -> void
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.AddQueryFilter(Autypo.QueryFilter! filter) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithAdditionalKeys(System.Func<T, System.Collections.Generic.IEnumerable<string!>!>! selector) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithCandidateFilter(Autypo.CandidateFilter<T>! filter) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithCandidateScorer(Autypo.CandidateScorer<T>! scorer) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithCandidateTagger(Autypo.CandidateTagger<T>! tagger) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithCaseSensitivity(bool value) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithFuzziness(Autypo.FuzzinessSelector! selector) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithMatchScope(Autypo.MatchScopeSelector! selector) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithName(string! name) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithPartialTokenMatching(Autypo.PartialTokenMatchingPolicySelector! selector) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithPriority(Autypo.IndexPrioritySelector! selector) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithQueryExpander(Autypo.QueryExpander! expander) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithShouldIndex(System.Func<T, bool>! shouldIndex) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithTextAnalyzer(System.Action<Autypo.Configuration.AutypoTextAnalyzerBuilder!>! configureBuilder) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilder<T>.WithTokenOrdering(Autypo.TokenOrderingSelector! selector) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions
+Autypo.Configuration.AutypoMetadataEnrichment
+Autypo.Configuration.AutypoMetadataEnrichment.IncludeDocumentTokenText = 1 -> Autypo.Configuration.AutypoMetadataEnrichment
+Autypo.Configuration.AutypoTextAnalyzerBuilder
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseAlsoDocumentTransformer(System.Func<Autypo.Tokenization.IAutypoTokenTransformer!>! transformer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseAlsoQueryTransformer(System.Func<Autypo.Tokenization.IAutypoTokenTransformer!>! transformer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseAlsoTransformer(System.Func<Autypo.Tokenization.IAutypoTokenTransformer!>! transformer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseDocumentTokenizer(System.Func<Autypo.Tokenization.IAutypoTokenizer!>! tokenizer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseDocumentTransformer(System.Func<Autypo.Tokenization.IAutypoTokenTransformer!>! transformer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseQueryTokenizer(System.Func<Autypo.Tokenization.IAutypoTokenizer!>! tokenizer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseQueryTransformer(System.Func<Autypo.Tokenization.IAutypoTokenTransformer!>! transformer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseTokenizer(System.Func<Autypo.Tokenization.IAutypoTokenizer!>! tokenizer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.Configuration.AutypoTextAnalyzerBuilder.UseTransformer(System.Func<Autypo.Tokenization.IAutypoTokenTransformer!>! transformer) -> Autypo.Configuration.AutypoTextAnalyzerBuilder!
+Autypo.DocumentScorer<T>
+Autypo.DocumentScorers
+Autypo.DocumentTokenInfo
+Autypo.DocumentTokenInfo.DocumentTokenInfo() -> void
+Autypo.DocumentTokenInfo.EndsExactInOrderMatch.get -> bool
+Autypo.DocumentTokenInfo.EndsExactInOrderMatch.init -> void
+Autypo.DocumentTokenInfo.EndsExactSequentialMatch.get -> bool
+Autypo.DocumentTokenInfo.EndsExactSequentialMatch.init -> void
+Autypo.DocumentTokenInfo.EndsFuzzyInOrderMatch.get -> bool
+Autypo.DocumentTokenInfo.EndsFuzzyInOrderMatch.init -> void
+Autypo.DocumentTokenInfo.EndsFuzzySequentialMatch.get -> bool
+Autypo.DocumentTokenInfo.EndsFuzzySequentialMatch.init -> void
+Autypo.DocumentTokenInfo.EndsNearInOrderMatch.get -> bool
+Autypo.DocumentTokenInfo.EndsNearInOrderMatch.init -> void
+Autypo.DocumentTokenInfo.EndsNearSequentialMatch.get -> bool
+Autypo.DocumentTokenInfo.EndsNearSequentialMatch.init -> void
+Autypo.DocumentTokenInfo.IsExactMatch.get -> bool
+Autypo.DocumentTokenInfo.IsExactMatch.init -> void
+Autypo.DocumentTokenInfo.IsFuzzyMatch.get -> bool
+Autypo.DocumentTokenInfo.IsFuzzyMatch.init -> void
+Autypo.DocumentTokenInfo.IsNearMatch.get -> bool
+Autypo.DocumentTokenInfo.IsNearMatch.init -> void
+Autypo.DocumentTokenInfo.IsSkipped.get -> bool
+Autypo.DocumentTokenInfo.IsSkipped.init -> void
+Autypo.DocumentTokenInfo.Token.get -> Autypo.Tokenization.AutypoToken?
+Autypo.DocumentTokenInfo.Token.init -> void
+Autypo.EmptyQueryHandler<T>
+Autypo.Fuzziness
+Autypo.Fuzziness.AllowTransposition.get -> bool
+Autypo.Fuzziness.Fuzziness() -> void
+Autypo.Fuzziness.Fuzziness(int maxEditDistance, bool allowTransposition) -> void
+Autypo.Fuzziness.MaxEditDistance.get -> int
+Autypo.FuzzinessSelector
+Autypo.FuzzinessSelectors
+Autypo.IAutypoComplete
+Autypo.IAutypoComplete.Complete(string! term, Autypo.AutypoSearchContext? context = null) -> System.Collections.Generic.IEnumerable<string!>!
+Autypo.IAutypoComplete.CompleteAsync(string! term, Autypo.AutypoSearchContext? context = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<System.Collections.Generic.IEnumerable<string!>!>
+Autypo.IAutypoDataSource<T>
+Autypo.IAutypoDataSource<T>.LoadDocumentsAsync(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<T>!>!
+Autypo.IAutypoSearch<T>
+Autypo.IAutypoSearch<T>.Search(string! query, Autypo.AutypoSearchContext? context = null) -> System.Collections.Generic.IEnumerable<Autypo.AutypoSearchResult<T>>!
+Autypo.IAutypoSearch<T>.SearchAsync(string! query, Autypo.AutypoSearchContext? context = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.ValueTask<System.Collections.Generic.IEnumerable<Autypo.AutypoSearchResult<T>>!>
+Autypo.IndexPrioritySelector
+Autypo.InitializationMode
+Autypo.InitializationMode.Background = 1 -> Autypo.InitializationMode
+Autypo.InitializationMode.Eager = 0 -> Autypo.InitializationMode
+Autypo.InitializationMode.Lazy = 2 -> Autypo.InitializationMode
+Autypo.MatchCandidate<T>
+Autypo.MatchCandidate<T>.Document.get -> T
+Autypo.MatchCandidate<T>.DocumentExactMatchCount.get -> int
+Autypo.MatchCandidate<T>.DocumentFirstExactMatchIndex.get -> int
+Autypo.MatchCandidate<T>.DocumentFirstFuzzyMatchIndex.get -> int
+Autypo.MatchCandidate<T>.DocumentFirstNearMatchIndex.get -> int
+Autypo.MatchCandidate<T>.DocumentFuzzyMatchCount.get -> int
+Autypo.MatchCandidate<T>.DocumentHasExactInOrderMatch.get -> bool
+Autypo.MatchCandidate<T>.DocumentHasExactSequentialMatch.get -> bool
+Autypo.MatchCandidate<T>.DocumentHasFuzzyInOrderMatch.get -> bool
+Autypo.MatchCandidate<T>.DocumentHasFuzzySequentialMatch.get -> bool
+Autypo.MatchCandidate<T>.DocumentHasNearInOrderMatch.get -> bool
+Autypo.MatchCandidate<T>.DocumentHasNearSequentialMatch.get -> bool
+Autypo.MatchCandidate<T>.DocumentNearMatchCount.get -> int
+Autypo.MatchCandidate<T>.DocumentScore.get -> float
+Autypo.MatchCandidate<T>.DocumentSkippedTokenCount.get -> int
+Autypo.MatchCandidate<T>.DocumentTokenizedLength.get -> int
+Autypo.MatchCandidate<T>.GetExtractedDocumentTokenInfo(int index) -> Autypo.DocumentTokenInfo
+Autypo.MatchCandidate<T>.GetExtractedQueryTokenInfo(int index) -> Autypo.QueryTokenInfo
+Autypo.MatchCandidate<T>.IndexName.get -> string?
+Autypo.MatchCandidate<T>.PartialMatchPolicy.get -> Autypo.PartialMatchPolicy
+Autypo.MatchCandidate<T>.QueryExactInOrderMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryExactMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryExactSequentialMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryFinalExactTokenBestSuffixLength.get -> int
+Autypo.MatchCandidate<T>.QueryFinalFuzzyTokenBestSuffixLength.get -> int
+Autypo.MatchCandidate<T>.QueryFinalNearTokenBestSuffixLength.get -> int
+Autypo.MatchCandidate<T>.QueryFirstExactMatchIndex.get -> int
+Autypo.MatchCandidate<T>.QueryFirstFuzzyMatchIndex.get -> int
+Autypo.MatchCandidate<T>.QueryFirstNearMatchIndex.get -> int
+Autypo.MatchCandidate<T>.QueryFuzzyInOrderMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryFuzzyMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryFuzzySequentialMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryNearInOrderMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryNearMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryNearSequentialMatchCount.get -> int
+Autypo.MatchCandidate<T>.QueryTokenizedLength.get -> int
+Autypo.MatchCandidate<T>.Tags.get -> Autypo.AutypoTags
+Autypo.MatchCandidate<T>.TokenOrdering.get -> Autypo.TokenOrdering
+Autypo.MatchScopeSelector
+Autypo.MatchScopeSelectors
+Autypo.MaxResultsSelector
+Autypo.PartialMatchPolicy
+Autypo.PartialMatchPolicy.PartialMatchPolicy() -> void
+Autypo.PartialMatchPolicy.Threshold.get -> float
+Autypo.PartialMatchPolicy.WithRequiredQueryToken(int requiredTokenIndex) -> Autypo.PartialMatchPolicy
+Autypo.PartialTokenMatchingPolicySelector
+Autypo.QueryExpander
+Autypo.QueryFilter
+Autypo.QueryTokenDistanceStats
+Autypo.QueryTokenDistanceStats.AverageMaxPosition.get -> float
+Autypo.QueryTokenDistanceStats.AverageMaxPosition.init -> void
+Autypo.QueryTokenDistanceStats.AverageMinPosition.get -> float
+Autypo.QueryTokenDistanceStats.AverageMinPosition.init -> void
+Autypo.QueryTokenDistanceStats.CollectionFrequency.get -> int
+Autypo.QueryTokenDistanceStats.CollectionFrequency.init -> void
+Autypo.QueryTokenDistanceStats.DocumentFrequency.get -> int
+Autypo.QueryTokenDistanceStats.DocumentFrequency.init -> void
+Autypo.QueryTokenDistanceStats.DocumentKeyFrequency.get -> int
+Autypo.QueryTokenDistanceStats.DocumentKeyFrequency.init -> void
+Autypo.QueryTokenDistanceStats.MaxPosition.get -> int
+Autypo.QueryTokenDistanceStats.MaxPosition.init -> void
+Autypo.QueryTokenDistanceStats.MaxTermFrequency.get -> int
+Autypo.QueryTokenDistanceStats.MaxTermFrequency.init -> void
+Autypo.QueryTokenDistanceStats.MinPosition.get -> int
+Autypo.QueryTokenDistanceStats.MinPosition.init -> void
+Autypo.QueryTokenDistanceStats.QueryTokenDistanceStats() -> void
+Autypo.QueryTokenInfo
+Autypo.QueryTokenInfo.ExactStats.get -> Autypo.QueryTokenDistanceStats
+Autypo.QueryTokenInfo.ExactStats.init -> void
+Autypo.QueryTokenInfo.Fuzziness.get -> Autypo.Fuzziness
+Autypo.QueryTokenInfo.Fuzziness.init -> void
+Autypo.QueryTokenInfo.FuzzyStats.get -> Autypo.QueryTokenDistanceStats
+Autypo.QueryTokenInfo.FuzzyStats.init -> void
+Autypo.QueryTokenInfo.MatchedExact.get -> bool
+Autypo.QueryTokenInfo.MatchedExact.init -> void
+Autypo.QueryTokenInfo.MatchedFuzzy.get -> bool
+Autypo.QueryTokenInfo.MatchedFuzzy.init -> void
+Autypo.QueryTokenInfo.MatchedInOrderExact.get -> bool
+Autypo.QueryTokenInfo.MatchedInOrderExact.init -> void
+Autypo.QueryTokenInfo.MatchedInOrderFuzzy.get -> bool
+Autypo.QueryTokenInfo.MatchedInOrderFuzzy.init -> void
+Autypo.QueryTokenInfo.MatchedInOrderNear.get -> bool
+Autypo.QueryTokenInfo.MatchedInOrderNear.init -> void
+Autypo.QueryTokenInfo.MatchedNear.get -> bool
+Autypo.QueryTokenInfo.MatchedNear.init -> void
+Autypo.QueryTokenInfo.MatchedSequentialExact.get -> bool
+Autypo.QueryTokenInfo.MatchedSequentialExact.init -> void
+Autypo.QueryTokenInfo.MatchedSequentialFuzzy.get -> bool
+Autypo.QueryTokenInfo.MatchedSequentialFuzzy.init -> void
+Autypo.QueryTokenInfo.MatchedSequentialNear.get -> bool
+Autypo.QueryTokenInfo.MatchedSequentialNear.init -> void
+Autypo.QueryTokenInfo.MatchScope.get -> Autypo.MatchScope
+Autypo.QueryTokenInfo.MatchScope.init -> void
+Autypo.QueryTokenInfo.NearStats.get -> Autypo.QueryTokenDistanceStats
+Autypo.QueryTokenInfo.NearStats.init -> void
+Autypo.QueryTokenInfo.QueryTokenInfo() -> void
+Autypo.QueryTokenInfo.Token.get -> Autypo.Tokenization.AutypoToken!
+Autypo.QueryTokenInfo.Token.init -> void
+Autypo.ScoredDocument<T>
+Autypo.ScoredDocument<T>.Document.get -> T
+Autypo.ScoredDocument<T>.Document.init -> void
+Autypo.ScoredDocument<T>.Score.get -> float
+Autypo.ScoredDocument<T>.Score.init -> void
+Autypo.ScoredDocument<T>.ScoredDocument() -> void
+Autypo.Tokenization.AutypoToken
+Autypo.Tokenization.AutypoToken.Contains(int sequenceNumber) -> bool
+Autypo.Tokenization.AutypoToken.IsCompoundToken.get -> bool
+Autypo.Tokenization.AutypoToken.IsDeleted.get -> bool
+Autypo.Tokenization.AutypoToken.IsOriginal.get -> bool
+Autypo.Tokenization.AutypoToken.SequenceEnd.get -> int
+Autypo.Tokenization.AutypoToken.SequenceLength.get -> int
+Autypo.Tokenization.AutypoToken.SequenceStart.get -> int
+Autypo.Tokenization.AutypoToken.Tags.get -> Autypo.AutypoTags
+Autypo.Tokenization.AutypoToken.Text.get -> System.ReadOnlyMemory<char>
+Autypo.Tokenization.AutypoToken.WithText(System.ReadOnlyMemory<char> text) -> Autypo.Tokenization.AutypoToken!
+Autypo.Tokenization.AutypoTokenSegment
+Autypo.Tokenization.AutypoTokenSegment.AutypoTokenSegment() -> void
+Autypo.Tokenization.AutypoTokenSegment.AutypoTokenSegment(int leadingTrivia, int tokenizedLength, int trailingTrivia) -> void
+Autypo.Tokenization.AutypoTokenSegment.IsToken.get -> bool
+Autypo.Tokenization.AutypoTokenSegment.LeadingTrivia.get -> int
+Autypo.Tokenization.AutypoTokenSegment.Slice(ref System.ReadOnlyMemory<char> text, out System.ReadOnlyMemory<char> tokenizedText) -> void
+Autypo.Tokenization.AutypoTokenSegment.TokenizedLength.get -> int
+Autypo.Tokenization.AutypoTokenSegment.TotalLength.get -> int
+Autypo.Tokenization.AutypoTokenSegment.TrailingTrivia.get -> int
+Autypo.Tokenization.IAutypoTokenizer
+Autypo.Tokenization.IAutypoTokenizer.Tokenize(System.ReadOnlyMemory<char> text, Autypo.Tokenization.TokenSegmentConsumer! consumer) -> void
+Autypo.Tokenization.IAutypoTokenTransformer
+Autypo.Tokenization.IAutypoTokenTransformer.Transform(Autypo.Tokenization.AutypoToken! token, Autypo.Tokenization.TokenConsumer! consumer) -> void
+Autypo.Tokenization.IdentityAutypoTokenizer
+Autypo.Tokenization.IdentityAutypoTokenizer.IdentityAutypoTokenizer() -> void
+Autypo.Tokenization.IdentityAutypoTokenizer.Tokenize(System.ReadOnlyMemory<char> text, Autypo.Tokenization.TokenSegmentConsumer! consumer) -> void
+Autypo.Tokenization.IdentityAutypoTokenTransformer
+Autypo.Tokenization.IdentityAutypoTokenTransformer.IdentityAutypoTokenTransformer() -> void
+Autypo.Tokenization.IdentityAutypoTokenTransformer.Transform(Autypo.Tokenization.AutypoToken! token, Autypo.Tokenization.TokenConsumer! consumer) -> void
+Autypo.Tokenization.NGramTokenTransformer
+Autypo.Tokenization.NGramTokenTransformer.NGramTokenTransformer(int ngramLength) -> void
+Autypo.Tokenization.NGramTokenTransformer.Transform(Autypo.Tokenization.AutypoToken! token, Autypo.Tokenization.TokenConsumer! consumer) -> void
+Autypo.Tokenization.TokenConsumer
+Autypo.Tokenization.TokenConsumer.Accept(Autypo.Tokenization.AutypoToken! token) -> void
+Autypo.Tokenization.TokenConsumer.Reset() -> void
+Autypo.Tokenization.TokenConsumer.TokenConsumer() -> void
+Autypo.Tokenization.TokenConsumer.Tokens.get -> System.Collections.Generic.IReadOnlyList<Autypo.Tokenization.AutypoToken!>!
+Autypo.Tokenization.TokenSegmentConsumer
+Autypo.Tokenization.TokenSegmentConsumer.Accept(Autypo.Tokenization.AutypoTokenSegment tokenSegment) -> void
+Autypo.Tokenization.TokenSegmentConsumer.AcceptTrivia(int length) -> void
+Autypo.Tokenization.TokenSegmentConsumer.CurrentLength.get -> int
+Autypo.Tokenization.TokenSegmentConsumer.Reset() -> void
+Autypo.Tokenization.TokenSegmentConsumer.Segments.get -> System.Collections.Generic.IReadOnlyList<Autypo.Tokenization.AutypoTokenSegment>!
+Autypo.Tokenization.TokenSegmentConsumer.TokenSegmentConsumer() -> void
+Autypo.Tokenization.TokenSegmentConsumer.TrivializeRemaining(int started, int length) -> void
+Autypo.Tokenization.WhitespaceAutypoTokenizer
+Autypo.Tokenization.WhitespaceAutypoTokenizer.Tokenize(System.ReadOnlyMemory<char> text, Autypo.Tokenization.TokenSegmentConsumer! consumer) -> void
+Autypo.Tokenization.WhitespaceAutypoTokenizer.WhitespaceAutypoTokenizer() -> void
+Autypo.TokenOrdering
+Autypo.TokenOrdering.InOrder = 0 -> Autypo.TokenOrdering
+Autypo.TokenOrdering.StrictSequence = 1 -> Autypo.TokenOrdering
+Autypo.TokenOrdering.Unordered = 2 -> Autypo.TokenOrdering
+Autypo.TokenOrderingSelector
+Autypo.UninitializedBehavior
+Autypo.UninitializedBehavior.None = 0 -> Autypo.UninitializedBehavior
+Autypo.UninitializedBehavior.ReturnEmpty = 1 -> Autypo.UninitializedBehavior
+Autypo.UninitializedBehavior.Throw = 2 -> Autypo.UninitializedBehavior
+const Autypo.DocumentScorers.DefaultScore = 1 -> float
+override Autypo.AutypoFactory<T>.InitializeIfBackground(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task!
+override Autypo.AutypoFactory<T>.InitializeIfEager(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task!
+static Autypo.AutypoTags.None.get -> Autypo.AutypoTags
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithBackgroundLoading<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, Autypo.UninitializedBehavior onUninitialized) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithDataSource<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, Autypo.IAutypoDataSource<T>! dataSource) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithDataSource<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, System.Collections.Generic.IEnumerable<T>! documents) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithDataSource<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, System.Func<System.Collections.Generic.IEnumerable<T>!>! dataSource) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithDataSource<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<T>!>!>! dataSource) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithEagerLoading<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithIndex<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, System.Func<T, string?>! keySelector) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithLazyLoading<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, Autypo.UninitializedBehavior onUninitialized) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithMaxResults<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, int maxResults) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithNoResultsForEmptyQuery<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithSingleResult<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoConfigurationBuilderExtensions.WithUnlimitedResults<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.AddMinimumLengthQueryFilter<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this, int length) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.AddNoMinimumLengthQueryFilter<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithFinalTokenFullMatchScope<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithFinalTokenPrefixMatchScope<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithFuzziness<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this, int maxEditDistance, bool allowTransposition = false) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithInOrderTokenOrdering<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithNoFuzziness<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithPartialTokenMatching<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this, float percent = 0) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithPriority<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this, int priority) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithStrictSequenceTokenOrdering<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Configuration.AutypoIndexConfigurationBuilderExtensions.WithUnorderedTokenOrdering<T>(this Autypo.Configuration.AutypoIndexConfigurationBuilder<T>! this) -> Autypo.Configuration.AutypoIndexConfigurationBuilder<T>!
+static Autypo.Fuzziness.None.get -> Autypo.Fuzziness
+static Autypo.FuzzinessSelectors.LengthBased.get -> Autypo.FuzzinessSelector!
+static Autypo.MatchScopeSelectors.Full.get -> Autypo.MatchScopeSelector!
+static Autypo.MatchScopeSelectors.PrefixFinalTokenOnly.get -> Autypo.MatchScopeSelector!
+static Autypo.PartialMatchPolicy.AllQueryTokensRequired() -> Autypo.PartialMatchPolicy
+static Autypo.PartialMatchPolicy.SomeQueryTokensRequired(float threshold = 0) -> Autypo.PartialMatchPolicy
+static Autypo.Tokenization.AutypoToken.Concat(System.Collections.Generic.IEnumerable<Autypo.Tokenization.AutypoToken!>! source, System.ReadOnlyMemory<char>? text = null, bool copyTags = false) -> Autypo.Tokenization.AutypoToken!
+static Autypo.Tokenization.AutypoTokenSegment.Empty.get -> Autypo.Tokenization.AutypoTokenSegment
+static Autypo.Tokenization.IdentityAutypoTokenizer.Instance.get -> Autypo.Tokenization.IdentityAutypoTokenizer!
+static Autypo.Tokenization.IdentityAutypoTokenTransformer.Instance.get -> Autypo.Tokenization.IdentityAutypoTokenTransformer!
+static Autypo.Tokenization.WhitespaceAutypoTokenizer.Instance.get -> Autypo.Tokenization.WhitespaceAutypoTokenizer!
+

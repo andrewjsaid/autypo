@@ -1,0 +1,14 @@
+﻿#nullable enable
+Autypo.AspNetCore.AutypoConfigurationBuilderAspNetCoreExtensions
+Autypo.AspNetCore.IAutypoRefresh
+Autypo.AspNetCore.IAutypoRefresh.RefreshAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+Autypo.AspNetCore.IAutypoRefresh<T>
+Autypo.AspNetCore.IAutypoRefresh<T>.RefreshAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+Autypo.AspNetCore.ServiceCollectionExtensions
+static Autypo.AspNetCore.AutypoConfigurationBuilderAspNetCoreExtensions.WithDataSource<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, System.Func<System.IServiceProvider!, Autypo.IAutypoDataSource<T>!>! dataSource) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.AspNetCore.AutypoConfigurationBuilderAspNetCoreExtensions.WithDataSource<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, System.Func<System.IServiceProvider!, System.Collections.Generic.IEnumerable<T>!>! dataSource) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.AspNetCore.AutypoConfigurationBuilderAspNetCoreExtensions.WithDataSource<T>(this Autypo.Configuration.AutypoConfigurationBuilder<T>! this, System.Func<System.IServiceProvider!, System.Threading.CancellationToken, System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<T>!>!>! dataSource) -> Autypo.Configuration.AutypoConfigurationBuilder<T>!
+static Autypo.AspNetCore.ServiceCollectionExtensions.AddAutypoComplete(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Autypo.Configuration.AutypoConfigurationBuilder<string!>!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Autypo.AspNetCore.ServiceCollectionExtensions.AddAutypoSearch<T>(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Autypo.Configuration.AutypoConfigurationBuilder<T>!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Autypo.AspNetCore.ServiceCollectionExtensions.AddKeyedAutypoComplete(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, string! key, System.Action<Autypo.Configuration.AutypoConfigurationBuilder<string!>!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Autypo.AspNetCore.ServiceCollectionExtensions.AddKeyedAutypoSearch<T>(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, string! key, System.Action<Autypo.Configuration.AutypoConfigurationBuilder<T>!>! configure) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!

@@ -1,0 +1,28 @@
+name: AOT Compatible
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+env:
+  DOTNET_VERSION: "9.0.x"
+
+jobs:
+  tests:
+    name: aot
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Publish AOT
+        run: cd ./src/Autypo.Aot && dotnet publish --runtime linux-x64 --configuration Release
+

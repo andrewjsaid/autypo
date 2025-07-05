@@ -1,0 +1,53 @@
+﻿@using BlazorCities
+@using Autypo
+@using Autypo.AspNetCore
+@using System.Diagnostics
+@inject CityDatabase CityDatabase
+@inject IAutypoRefresh<City> AutypoRefresh
+
+<div class="add-city-box">
+    <div>🚫 No matches found for <strong>@CityName</strong>.</div>
+    <button class="add-city-btn" @onclick="AddCity">
+        ➕ Add @CityName as a new city
+    </button>
+</div>
+
+@if (_lastIndexDuration != null)
+{
+    <div class="index-confirmation">
+        🎉 <strong>@_cityName</strong> has been successfully added!
+        <br />
+        ⚡ Re-indexed <strong>@(CityDatabase.Cities.Count.ToString("N0"))</strong> cities in
+        <strong>@_lastIndexDuration.Value.TotalMilliseconds.ToString("0.0") ms</strong>.
+    </div>
+}
+
+@code {
+    private TimeSpan? _lastIndexDuration;
+    private string _cityName = string.Empty;
+
+    [Parameter]
+    public string CityName
+    {
+        get => _cityName;
+        set
+        {
+            _cityName = value;
+            _lastIndexDuration = null;
+        }
+    }
+
+    private async Task AddCity()
+    {
+        if (string.IsNullOrWhiteSpace(CityName))
+        {
+            return;
+        }
+
+        CityDatabase.Cities.Add(new City(CityName, "Custom"));
+
+        var sw = Stopwatch.StartNew();
+        await AutypoRefresh.RefreshAsync(CancellationToken.None);
+        _lastIndexDuration = sw.Elapsed;
+    }
+}

@@ -1,0 +1,6 @@
+﻿#nullable enable
+Autypo.AutypoFactory<T>.AutypoSearch.get -> Autypo.IAutypoSearch<T>!
+Autypo.AutypoRefreshToken.Register<T>(Autypo.IAutypoSearch<T>! autypoSearch) -> void
+Autypo.IAutypoComplete.Create(Autypo.IAutypoSearch<string!>! autypoSearch) -> Autypo.IAutypoComplete!
+static Autypo.AutypoFactory.CreateCompleteAsync(System.Action<Autypo.Configuration.AutypoConfigurationBuilder<string!>!>! configure, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Autypo.IAutypoComplete!>!
+static Autypo.AutypoFactory.CreateSearchAsync<T>(System.Action<Autypo.Configuration.AutypoConfigurationBuilder<T>!>! configure, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Autypo.IAutypoSearch<T>!>!

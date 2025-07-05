@@ -1,0 +1,72 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@using BlazorCities
+@using Autypo
+@using System.Diagnostics
+@inject CityDatabase CityDatabase
+@inject IAutypoSearch<City> AutypoSearch
+
+<PageTitle>City Search</PageTitle>
+
+<h1>Autypo Search City Sample App <span class="metric-badge">⚡ Fast Search Engine</span></h1>
+
+<div class="info-banner">
+    🚀 Indexing and searching <strong>@(CityDatabase.Cities.Count.ToString("N0")) cities</strong> instantly as you type.
+</div>
+
+<div class="feature-highlights">
+    <div class="features-title">✨ Key Features Demonstrated</div>
+    <ul class="features-list">
+        <li>⚡ <strong>Real-time Search</strong> — Results update instantly as you type</li>
+        <li>➕ <strong>Re-Indexing</strong> — Add missing cities in real time with fast index refresh</li>
+        <li>🔠 <strong>Typo Tolerance</strong> — Intelligent matching even with small mistakes</li>
+        <li>🧠 <strong>Prefix & Order Matching</strong> — Matches must follow word order, with smart prefix logic</li>
+        <li>📈 <strong>Scalable Indexing</strong> — Handles over <strong>31,000 cities</strong> with fast re-indexing</li>
+        <li>🧩 <strong>Split & Joined Word Handling</strong> — “therepublic” = “the republic” via bigram analysis</li>
+    </ul>
+</div>
+
+<input value="@_searchText" @oninput="OnInputChanged" placeholder="Type to search..." class="form-control" />
+
+@if (_suggestions.Count > 0)
+{
+    <div id="search-time" class="search-time">
+        ⏱️ Found matches across <strong>@(CityDatabase.Cities.Count.ToString("N0")) cities</strong> in
+        <strong>@_timeSpan.TotalMilliseconds.ToString("0.0") ms</strong>.
+    </div>
+
+    <ul class="list-group mt-2">
+        @foreach (var suggestion in _suggestions)
+        {
+            <li class="list-group-item">@suggestion</li>
+        }
+    </ul>
+}else if (!string.IsNullOrWhiteSpace(_searchText))
+{
+    <AddCityPrompt CityName="@(_searchText ?? string.Empty)" />
+}
+
+@code {
+    private readonly List<string> _suggestions = [];
+    private string _searchText = string.Empty;
+    private TimeSpan _timeSpan;
+
+    private async Task OnInputChanged(ChangeEventArgs e)
+    {
+        _searchText = e.Value?.ToString() ?? string.Empty;
+        _suggestions.Clear();
+
+        var sw = Stopwatch.StartNew();
+
+        // Use Autypo to find matching countries
+        IEnumerable<AutypoSearchResult<City>> searchResults = await AutypoSearch.SearchAsync(_searchText);
+
+        _timeSpan = sw.Elapsed;
+
+        foreach (AutypoSearchResult<City> searchResult in searchResults)
+        {
+            _suggestions.Add($"{searchResult.Value.Name} ({searchResult.Value.Country})");
+        }
+
+    }
+}
